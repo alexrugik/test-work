@@ -1,6 +1,8 @@
-import ItemsMode from './items.model';
+import UsersModel from './users.model';
+import RepoModel from './repo.model';
 
 export default angular.module('app.shared.models', [
-    ItemsMode
+    UsersModel,
+    RepoModel
 ])
     .name;

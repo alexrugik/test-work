@@ -1,0 +1,11 @@
+<div class="card w-75">
+    <div class="card-block">
+        <h3 class="card-title" ng-bind="$ctrl.repo.name"></h3>
+        <p class="card-text">Owner: {{$ctrl.repo.owner.login}}</p>
+        <p class="card-text">Fork: {{$ctrl.repo.fork}}</p>
+        <p class="card-text">Forks: {{$ctrl.repo.forks}}</p>
+        <p class="card-text">Stars: {{$ctrl.repo.stargazers_count}}</p>
+        <p class="card-text">Language: {{$ctrl.repo.language}}</p>
+        <p class="card-text"><a href="{{$ctrl.repo.html_url}}">Repo url</a></p>
+    </div>
+</div>

@@ -1,10 +1,10 @@
 import Header from './header/header.component';
-import TotalSum from './total-sum/total-sum.component';
-import Table from './table/table.component';
+import UserProfile from './user-profile/user-profile.component';
+import RepoProfile from './repo-profile/repo.component';
 
 export default angular.module('app.shared.components', [
     Header,
-    TotalSum,
-    Table
+    UserProfile,
+    RepoProfile
 ])
     .name;

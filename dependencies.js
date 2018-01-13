@@ -5,5 +5,6 @@ module.exports = [
     'angular',
     'angular-ui-router',
     'angular-route',
+    'angular-resource',
     'bootstrap'
 ];

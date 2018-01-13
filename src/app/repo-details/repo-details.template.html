@@ -1,0 +1,10 @@
+<div class="container" ng-switch="$ctrl.dataState">
+    <div ng-switch-when="loading">...</div>
+    <div ng-switch-when="error">
+        Something wrong, please try again later!
+    </div>
+    <div ng-switch-when="empty"></div>
+    <div ng-switch-when="loaded">
+        <app-repo-profile repo="$ctrl.repo"></app-repo-profile>
+    </div>
+</div>

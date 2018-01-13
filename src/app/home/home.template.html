@@ -1,1 +1,31 @@
-<app-table config="$ctrl.tableConfig"></app-table>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-20">
+            <div class="input-group">
+      <span class="input-group-btn">
+        <button
+                class="btn btn-default"
+                type="button"
+                ng-click="$ctrl.onSearchUser($ctrl.username)">
+            Go!
+        </button>
+      </span>
+                <input type="text"
+                       class="form-control"
+                       ng-model="$ctrl.username"
+                       placeholder="Search for...">
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+</div>
+
+<div class="container" ng-switch="$ctrl.dataState">
+    <div ng-switch-when="loading">...</div>
+    <div ng-switch-when="error">
+        Something wrong, please try again later!
+    </div>
+    <div ng-switch-when="empty"></div>
+    <div ng-switch-when="loaded">
+        <app-user-profile user="$ctrl.user"></app-user-profile>
+    </div>
+</div>

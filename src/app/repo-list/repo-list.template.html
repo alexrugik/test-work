@@ -1,0 +1,16 @@
+<div class="container" ng-switch="$ctrl.dataState">
+    <div ng-switch-when="loading">...</div>
+    <div ng-switch-when="error">
+        Something wrong, please try again later!
+    </div>
+    <div ng-switch-when="empty"></div>
+    <div ng-switch-when="loaded">
+        <ul class="list-group">
+            <li class="list-group-item"
+                ng-repeat="repo in $ctrl.repos">
+                <p>Name: <span ng-bind="repo.name"></span></p>
+                <a href="#" ui-sref="app.repo-details({repoId: repo.name, ownerId: repo.owner.login})">More Detail</a>
+            </li>
+        </ul>
+    </div>
+</div>

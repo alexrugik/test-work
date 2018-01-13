@@ -1,51 +1,33 @@
 import HomePageTemplate from './home.template.html';
+import {DATA_STATE} from "../app.const";
 
 
 class HomePageController {
     /* @ngInject */
-    constructor(cartService, ItemsModel) {
-        this.cartService = cartService;
-        this.ItemsModel = ItemsModel;
+    constructor(usersModel) {
+        this.Users = usersModel.Users;
     }
 
     $onInit() {
-        this.data = [];
-        this.setData()
-            .initTableConfig();
+        this.dataState = DATA_STATE.EMPTY;
     }
 
-    setData() {
-        this.data.length = 0;
-        this.ItemsModel.getItems()
+    onSearchUser(userId) {
+        if (userId === void 0 || userId.length < 1) {
+            return;
+        }
+        this.dataState = DATA_STATE.LOADING;
+        this.Users.getUserById({userId})
+            .$promise
             .then(data => {
-                this.data.push(...this.transformData(data));
+                this.user = data;
+                this.dataState = DATA_STATE.LOADED;
+                console.log(data);
             })
             .catch(error => {
+                this.dataState = DATA_STATE.ERROR;
                 console.warn(error);
             });
-        return this;
-    }
-
-    transformData(data) {
-        return data.map(item => {
-            item.ingredients = item.ingredients.join(',');
-            return item;
-        })
-    }
-
-    onAddItem(item) {
-        this.cartService.addItem(Object.assign({}, item));
-    }
-
-    initTableConfig() {
-        this.tableConfig = {
-            headerData: ['Number', 'Name', 'Ingredients separated by comma', 'Price prepended by currency\n' +
-            '            sign', ' Add to cart'],
-            data: this.data,
-            callbackLabel: 'add Item to Cart',
-            callback: this.onAddItem.bind(this)
-        };
-        return this;
     }
 }
 

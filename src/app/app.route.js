@@ -19,12 +19,12 @@ function appRoute($stateProvider) {
             url: '/home',
             template: '<app-home-page></app-home-page>'
         })
-        .state(APP_ROUTES.CART, {
-            url: '/cart',
-            template: '<app-cart-page></app-cart-page>'
+        .state(APP_ROUTES.REPO_LIST, {
+            url: '/repo-list/{userId}"',
+            template: '<app-repo-list></app-repo-list>'
         })
-        .state(APP_ROUTES.HISTORY, {
-            url: '/history',
-            template: '<app-history-page></app-history-page>'
+        .state(APP_ROUTES.REPO_DETAILS, {
+            url: '/repo-profile/{ownerId}/{repoId}"',
+            template: '<app-repo-details></app-repo-details>'
         })
 }

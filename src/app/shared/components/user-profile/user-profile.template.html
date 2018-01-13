@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h4>User Profile</h4></div>
+            <div class="panel-body">
+                <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+                    <img alt="User Pic"
+                         ng-src="{{$ctrl.user.avatar_url}}"
+                         id="profile-image1" class="img-circle img-responsive">
+                </div>
+                <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+                    <div class="container">
+                        <h2 ng-bind="$ctrl.user.name"></h2>
+                        <p>Home page:
+                            <a ng-bind="$ctrl.user.html_url"
+                               href="{{$ctrl.user.html_url}}">
+                            </a>
+                        </p>
+                        <p>Public Repositories: <b ng-bind="$ctrl.user.public_repos"></b></p>
+                        <p>Followers: <b ng-bind="$ctrl.user.followers"></b></p>
+
+                    </div>
+                    <hr>
+                    <ul class="container details">
+                        <li>
+                            <p>
+                                <span class="glyphicon glyphicon-user one" style="width:50px;"></span>
+                                {{$ctrl.user.login}}
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>
+                                {{$ctrl.user.email || 'no public email'}}
+                            </p>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="col-sm-12 col-xs-12 tital">Created at: {{$ctrl.parseDate($ctrl.user.created_at)}}</div>
+                    <div class="col-sm-12 col-xs-12 tital">
+                        <a href="#" ui-sref="app.repo-list({userId: $ctrl.user.login})">Go to repositories list</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

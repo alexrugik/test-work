@@ -7,9 +7,9 @@ import AppComponent from './app.component';
 import AppDependency from './app.dependency';
 import AppShared from './shared/shared.module';
 
-import CartModule from './cart/cart.module';
-import HistoryModule from './history/history.module';
+import RepoListPageComponent from './repo-list/repo-list.component';
 import HomePageComponent from './home/home.component';
+import RepoDetailsPageComponent from './repo-details/repo-details.component';
 
 export default angular.module('app', [
     AppDependency,
@@ -18,8 +18,8 @@ export default angular.module('app', [
     AppConfig,
     AppComponent,
     AppShared,
-    CartModule,
     HomePageComponent,
-    HistoryModule
+    RepoListPageComponent,
+    RepoDetailsPageComponent
 ])
     .name;
