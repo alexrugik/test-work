@@ -17,7 +17,6 @@ class RepoListController {
         this.Users.getUserRepositories({userId: this.userId})
             .$promise
             .then(data => {
-                console.log(data);
                 this.repos = data;
                 this.dataState = DATA_STATE.LOADED;
             })

@@ -22,11 +22,10 @@ class HomePageController {
             .then(data => {
                 this.user = data;
                 this.dataState = DATA_STATE.LOADED;
-                console.log(data);
             })
             .catch(error => {
                 this.dataState = DATA_STATE.ERROR;
-                console.warn(error);
+                this.errorMessage = error.statusText;
             });
     }
 }

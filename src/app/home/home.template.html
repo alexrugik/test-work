@@ -13,6 +13,11 @@
                 <input type="text"
                        class="form-control"
                        ng-model="$ctrl.username"
+                       ng-change="$ctrl.onSearchUser($ctrl.username)"
+                       ng-model-options="{
+                            updateOn: 'default blur',
+                            debounce: { 'default': 500, 'blur': 0 }
+                       }"
                        placeholder="Search for...">
             </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
@@ -20,8 +25,12 @@
 </div>
 
 <div class="container" ng-switch="$ctrl.dataState">
-    <div ng-switch-when="loading">...</div>
+    <div ng-switch-when="loading">
+        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+        <span class="sr-only">Loading...</span>
+    </div>
     <div ng-switch-when="error">
+        <p>Error message: {{$ctrl.errorMessage}}</p>
         Something wrong, please try again later!
     </div>
     <div ng-switch-when="empty"></div>

@@ -20,7 +20,6 @@ class RepoDetailsController {
             .then(data => {
                 this.dataState = DATA_STATE.LOADED;
                 this.repo = data;
-                console.log(data);
             })
             .catch(error => {
                 this.dataState = DATA_STATE.ERROR;
