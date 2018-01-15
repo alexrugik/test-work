@@ -20,7 +20,7 @@ function appRoute($stateProvider) {
             template: '<app-home-page></app-home-page>'
         })
         .state(APP_ROUTES.REPO_LIST, {
-            url: '/repo-list/{userId}"',
+            url: '/repo-list/{userId}',
             template: '<app-repo-list></app-repo-list>'
         })
         .state(APP_ROUTES.REPO_DETAILS, {
