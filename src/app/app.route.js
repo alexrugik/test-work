@@ -24,7 +24,7 @@ function appRoute($stateProvider) {
             template: '<app-repo-list></app-repo-list>'
         })
         .state(APP_ROUTES.REPO_DETAILS, {
-            url: '/repo-profile/{ownerId}/{repoId}"',
+            url: '/repo-profile/{ownerId}/{repoId}',
             template: '<app-repo-details></app-repo-details>'
         })
 }
